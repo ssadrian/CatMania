@@ -3,15 +3,22 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTre
 import {Observable} from "rxjs";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
   constructor(private readonly router: Router) {
   }
 
   canActivate(
-    route: ActivatedRouteSnapshot, state: RouterStateSnapshot
+    route: ActivatedRouteSnapshot, state: RouterStateSnapshot,
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    throw new Error("not implemented");
+    let areCredentialsEmpty: boolean = this.authService.user.email === "" && this.authService.user.password === "";
+
+    if (areCredentialsEmpty) {
+      this.router.navigate(["login"])
+        .then((_: boolean): boolean => false);
+    }
+
+    return true;
   }
 }

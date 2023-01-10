@@ -3,12 +3,19 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
 
 const routes: Routes = [
-  {path: "", component: LoginPageComponent},
+  { path: "login", component: LoginPageComponent },
+  {
+    path: "",
+    loadChildren: () =>
+      import("./pages/pages.module")
+        .then(x => x.PagesModule),
+  },
+  { path: "**", redirectTo: "/login", pathMatch: "full" },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {
 }
