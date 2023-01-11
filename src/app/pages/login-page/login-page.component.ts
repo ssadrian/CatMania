@@ -5,14 +5,6 @@ import {ErrorStateMatcher} from "@angular/material/core";
 import {AuthService} from "src/app/services/auth.service";
 import {LoginData} from "src/app/interfaces/login-data.interface";
 
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted: null | boolean = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
-
 @Component({
   selector: "app-login-page",
   templateUrl: "./login-page.component.html",
@@ -30,8 +22,6 @@ export class LoginPageComponent {
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required]),
   });
-
-  matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
 
   onSubmit(): void {
     const mail: string | null = this.loginForm.controls["email"].value;

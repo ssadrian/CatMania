@@ -13,6 +13,10 @@ import {MatButtonModule} from "@angular/material/button";
 import {AuthService} from "./services/auth.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {InputTextModule} from "primeng/inputtext";
+import {ButtonModule} from "primeng/button";
+import {PasswordModule} from "primeng/password";
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule,
+    ButtonModule,
+    PasswordModule,
+    RippleModule
   ],
   providers: [PrimeNGConfig, AuthService, HttpClient],
   bootstrap: [AppComponent]
