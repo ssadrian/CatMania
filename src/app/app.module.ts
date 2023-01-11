@@ -10,22 +10,27 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {AuthService} from "./services/auth.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    MainPageComponent
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    HttpClientModule
   ],
-  providers: [PrimeNGConfig],
+  providers: [PrimeNGConfig, AuthService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {

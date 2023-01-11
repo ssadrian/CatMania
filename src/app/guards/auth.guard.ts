@@ -16,9 +16,8 @@ export class AuthGuard implements CanActivate {
     let areCredentialsEmpty: boolean = this.authService.user.email === "" && this.authService.user.password === "";
 
     if (areCredentialsEmpty) {
-      this.router.navigate(["login"])
-        .then((): void => {
-        });
+      this.router.navigate(["login"]);
+      return false;
     }
 
     return true;
