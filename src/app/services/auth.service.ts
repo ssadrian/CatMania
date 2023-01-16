@@ -20,8 +20,7 @@ export class AuthService {
           let found: boolean = false;
 
           for (let i: number = 0; i < value.length; i++) {
-            if (value[i].email == data.email
-              && value[i].password == data.password) {
+            if (value[i].email == data.email && value[i].password == data.password) {
               this.user = {
                 email: value[i].email,
                 password: value[i].password,

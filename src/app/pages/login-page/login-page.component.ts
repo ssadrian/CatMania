@@ -32,6 +32,7 @@ export class LoginPageComponent {
       password: pass ?? ""
     };
 
+    debugger;
     this.authService.login(logData)
       .subscribe({
         next: (v: LoginData) => console.log(v),

@@ -6,12 +6,11 @@
   </span>
 
   <span class="p-float-label">
-    <p-password id="password"></p-password>
+    <p-password id="password" formControlName="password"></p-password>
     <label for="password">Password</label>
   </span>
 
   <button [ngClass]="{'p-button-danger': loginForm.invalid}"
           [icon]="loginForm.valid ? 'pi pi-check' : 'pi pi-times'"
-          [disabled]="loginForm.invalid"
           class="p-button-outlined" type="submit" label="Submit" pButton pRipple></button>
 </form>
