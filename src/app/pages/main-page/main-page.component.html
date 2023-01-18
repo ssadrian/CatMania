@@ -1,1 +1,15 @@
-<h5>Main Page</h5>
+<form [formGroup]="catsForm" (ngSubmit)="getCats()">
+  <p-inputNumber [showButtons]="true" buttonLayout="horizontal"
+                 decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success"
+                 formControlName="limit">
+  </p-inputNumber>
+
+  <p-button type="submit">Cats!</p-button>
+</form>
+
+<div class="card">
+  <img *ngFor="let cat of cats"
+       [src]="cat.url"
+       [alt]="cat.id"
+  />
+</div>

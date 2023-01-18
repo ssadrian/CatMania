@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
-import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
-import {ErrorStateMatcher} from "@angular/material/core";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "src/app/services/auth.service";
 import {LoginData} from "src/app/interfaces/login-data.interface";
 
@@ -24,18 +23,16 @@ export class LoginPageComponent {
   });
 
   onSubmit(): void {
-    const mail: string | null = this.loginForm.controls["email"].value;
-    const pass: string | null = this.loginForm.controls["password"].value;
+    const mail: string | null = "test@test" ?? this.loginForm.controls["email"].value;
+    const pass: string | null = "2" ?? this.loginForm.controls["password"].value;
 
     const logData: LoginData = {
       email: mail ?? "",
       password: pass ?? ""
     };
 
-    debugger;
     this.authService.login(logData)
       .subscribe({
-        next: (v: LoginData) => console.log(v),
         error: (e) => console.error(e),
         complete: () => this.router.navigate(["/"])
       });

@@ -6,7 +6,7 @@ import {AppComponent} from "./app.component";
 import {PrimeNGConfig} from "primeng/api";
 import {MainPageComponent} from "./pages/main-page/main-page.component";
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
@@ -17,6 +17,9 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {PasswordModule} from "primeng/password";
 import {RippleModule} from "primeng/ripple";
+import {SliderModule} from "primeng/slider";
+import {InputNumberModule} from "primeng/inputnumber";
+import {TooltipModule} from "primeng/tooltip";
 
 @NgModule({
   declarations: [
@@ -36,7 +39,11 @@ import {RippleModule} from "primeng/ripple";
     InputTextModule,
     ButtonModule,
     PasswordModule,
-    RippleModule
+    RippleModule,
+    SliderModule,
+    FormsModule,
+    InputNumberModule,
+    TooltipModule
   ],
   providers: [PrimeNGConfig, AuthService, HttpClient],
   bootstrap: [AppComponent]
