@@ -15,6 +15,7 @@ export class LoginPageComponent {
     private readonly authService: AuthService,
     private readonly router: Router
   ) {
+    this.onSubmit();
   }
 
   loginForm = new FormGroup({

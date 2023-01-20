@@ -20,6 +20,8 @@ import {RippleModule} from "primeng/ripple";
 import {SliderModule} from "primeng/slider";
 import {InputNumberModule} from "primeng/inputnumber";
 import {TooltipModule} from "primeng/tooltip";
+import {ImageModule} from "primeng/image";
+import {CarouselModule} from "primeng/carousel";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {TooltipModule} from "primeng/tooltip";
     SliderModule,
     FormsModule,
     InputNumberModule,
-    TooltipModule
+    TooltipModule,
+    ImageModule,
+    CarouselModule
   ],
   providers: [PrimeNGConfig, AuthService, HttpClient],
   bootstrap: [AppComponent]

@@ -1,15 +1,34 @@
-<form [formGroup]="catsForm" (ngSubmit)="getCats()">
-  <p-inputNumber [showButtons]="true" buttonLayout="horizontal"
-                 decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success"
-                 formControlName="limit">
-  </p-inputNumber>
-
-  <p-button type="submit">Cats!</p-button>
-</form>
-
 <div class="card">
-  <img *ngFor="let cat of cats"
-       [src]="cat.url"
-       [alt]="cat.id"
-  />
+  <form [formGroup]="catsForm" (ngSubmit)="getCats()">
+    <p-inputNumber [showButtons]="true" buttonLayout="horizontal"
+                   decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success"
+                   formControlName="limit">
+    </p-inputNumber>
+
+    <p-button type="submit">Cats!</p-button>
+  </form>
 </div>
+
+<p-carousel [value]="cats" [numVisible]="3" [numScroll]="1" [circular]="true"
+            [autoplayInterval]="5500" [responsiveOptions]="responsiveOptions">
+  <ng-template let-cat pTemplate="item">
+    <div class="product-item">
+      <div class="product-item-content">
+        <div class="mb-3">
+          <p-image [src]="cat.url" alt="Cat photo" [preview]="true" styleClass="cat-image"/>
+        </div>
+
+        <div class="float-left">
+          <div class="car-buttons mt-5">
+            <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+
+            <p-button type="button" styleClass="p-button-success p-button-rounded mr-2"
+                      icon="pi pi-star-fill"></p-button>
+
+            <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
