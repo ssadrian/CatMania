@@ -2,13 +2,14 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ICat} from '../models/cat.model';
 import {Observable} from "rxjs";
+import {environment} from "../../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatsService {
   #apiUrl: string = "https://api.thecatapi.com/v1/images/search";
-  #token: string = "live_KtbNg4qmbBZQkPKv06Op1OX2j2fEJFWAh3B6qvvywg9LoBmvHIPDJnJ1JFcysdSM";
+  #token: string = environment.api_token;
 
   #limit: number = 25;
 
