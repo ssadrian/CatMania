@@ -24,8 +24,8 @@ export class LoginPageComponent {
   });
 
   onSubmit(): void {
-    const mail: string | null = "test@test" ?? this.loginForm.controls["email"].value;
-    const pass: string | null = "2" ?? this.loginForm.controls["password"].value;
+    const mail: string | null = this.loginForm.controls["email"].value;
+    const pass: string | null = this.loginForm.controls["password"].value;
 
     const logData: LoginData = {
       email: mail ?? "",
