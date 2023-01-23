@@ -22,6 +22,7 @@ import {InputNumberModule} from "primeng/inputnumber";
 import {TooltipModule} from "primeng/tooltip";
 import {ImageModule} from "primeng/image";
 import {CarouselModule} from "primeng/carousel";
+import {GalleriaModule} from "primeng/galleria";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {CarouselModule} from "primeng/carousel";
     InputNumberModule,
     TooltipModule,
     ImageModule,
-    CarouselModule
+    CarouselModule,
+    GalleriaModule,
   ],
   providers: [PrimeNGConfig, AuthService, HttpClient],
   bootstrap: [AppComponent]
