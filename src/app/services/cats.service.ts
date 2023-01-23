@@ -17,7 +17,7 @@ export class CatsService {
   }
 
   get(limit?: number): Observable<ICat[]> {
-    let filter = "?";
+    let filter: string = "?";
 
     limit = Math.min(this.#limit, limit ?? 0);
 
